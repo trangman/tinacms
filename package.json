@@ -6,22 +6,37 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "tina-dev": "tinacms dev -c",
+    "tina-build": "tinacms build",
+    "tina-audit": "tinacms audit"
   },
   "dependencies": {
+    "@tinacms/cli": "^1.10.2",
+    "@tinacms/fields": "^0.43.3",
+    "@tinacms/forms": "^0.43.0",
+    "@tinacms/react-core": "^0.43.0",
+    "@tinacms/react-modals": "^0.43.0",
+    "@tinacms/react-screens": "^0.43.0",
+    "@tinacms/react-sidebar": "^0.43.3",
+    "@tinacms/react-toolbar": "^0.43.3",
+    "@tinacms/styles": "^0.42.1",
+    "@tinacms/toolkit": "^1.7.13",
+    "gray-matter": "^4.0.3",
+    "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.2"
+    "tinacms": "^2.8.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
