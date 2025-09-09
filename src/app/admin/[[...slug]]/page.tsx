@@ -1,9 +1,26 @@
 'use client'
 
-import { TinaAdmin } from 'tinacms'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 export default function AdminPage() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading TinaCMS...</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Admin Header */}
@@ -33,7 +50,11 @@ export default function AdminPage() {
 
       {/* TinaCMS Admin */}
       <div className="h-screen">
-        <TinaAdmin />
+        <iframe
+          src="http://localhost:4001/admin/index.html"
+          className="w-full h-full border-0"
+          title="TinaCMS Admin"
+        />
       </div>
     </div>
   )
