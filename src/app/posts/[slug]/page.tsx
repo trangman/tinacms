@@ -47,17 +47,17 @@ export default function PostPage({ params }: PostPageProps) {
       {/* Post Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="aspect-w-16 aspect-h-9">
+          <div className="w-full h-96 overflow-hidden">
             {post.heroImage ? (
               <Image
                 src={post.heroImage}
                 alt={post.title}
                 width={800}
                 height={450}
-                className="w-full h-96 object-cover"
+                className="w-full h-full object-cover"
               />
             ) : (
-              <div className="w-full h-96 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+              <div className="w-full h-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
                 <div className="text-center text-white">
                   <h2 className="text-4xl font-bold mb-2">{post.category}</h2>
                   <p className="text-xl opacity-90">Featured Post</p>
@@ -68,9 +68,12 @@ export default function PostPage({ params }: PostPageProps) {
           
           <div className="p-8">
             <div className="flex items-center justify-between mb-6">
-              <span className="inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">
+              <Link
+                href={`/categories/${post.category.toLowerCase().replace(/\s+/g, '-')}`}
+                className="inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full hover:bg-blue-200 transition-colors"
+              >
                 {post.category}
-              </span>
+              </Link>
               <time className="text-sm text-gray-500">
                 {new Date(post.publishedAt).toLocaleDateString('en-US', {
                   year: 'numeric',
