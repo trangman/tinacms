@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "tina-dev": "tinacms dev -c",
+    "tina-dev": "tinacms dev",
     "tina-build": "tinacms build",
     "tina-audit": "tinacms audit",
     "setup-tinacms": "node setup-tinacms.js"

@@ -1,0 +1,19 @@
+fragment PostParts on Post {
+  __typename
+  title
+  excerpt
+  heroImage
+  publishedAt
+  author
+  category
+  status
+  body
+}
+
+fragment CategoryParts on Category {
+  __typename
+  name
+  description
+  image
+  color
+}
