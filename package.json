@@ -9,7 +9,8 @@
     "lint": "eslint",
     "tina-dev": "tinacms dev -c",
     "tina-build": "tinacms build",
-    "tina-audit": "tinacms audit"
+    "tina-audit": "tinacms audit",
+    "setup-tinacms": "node setup-tinacms.js"
   },
   "dependencies": {
     "@tinacms/cli": "^1.10.2",
