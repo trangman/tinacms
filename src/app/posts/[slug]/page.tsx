@@ -47,8 +47,8 @@ export default function PostPage({ params }: PostPageProps) {
       {/* Post Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          {post.heroImage && (
-            <div className="aspect-w-16 aspect-h-9">
+          <div className="aspect-w-16 aspect-h-9">
+            {post.heroImage ? (
               <Image
                 src={post.heroImage}
                 alt={post.title}
@@ -56,8 +56,15 @@ export default function PostPage({ params }: PostPageProps) {
                 height={450}
                 className="w-full h-96 object-cover"
               />
-            </div>
-          )}
+            ) : (
+              <div className="w-full h-96 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+                <div className="text-center text-white">
+                  <h2 className="text-4xl font-bold mb-2">{post.category}</h2>
+                  <p className="text-xl opacity-90">Featured Post</p>
+                </div>
+              </div>
+            )}
+          </div>
           
           <div className="p-8">
             <div className="flex items-center justify-between mb-6">

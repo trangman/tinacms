@@ -69,47 +69,14 @@ export default function Home() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-3xl font-bold text-center mb-12">Latest Posts</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post) => (
-              <article key={post.slug} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                {post.heroImage && (
-                  <div className="aspect-w-16 aspect-h-9">
-                    <Image
-                      src={post.heroImage}
-                      alt={post.title}
-                      width={400}
-                      height={225}
-                      className="w-full h-48 object-cover"
-                    />
-                  </div>
-                )}
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-blue-600 font-semibold">
-                      {post.category}
-                    </span>
-                    <time className="text-sm text-gray-500">
-                      {new Date(post.publishedAt).toLocaleDateString()}
-                    </time>
-                  </div>
-                  <h4 className="text-xl font-bold mb-3 line-clamp-2">
-                    <Link href={`/posts/${post.slug}`} className="hover:text-blue-600">
-                      {post.title}
-                    </Link>
-                  </h4>
-                  <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">By {post.author}</span>
-                    <Link
-                      href={`/posts/${post.slug}`}
-                      className="text-blue-600 hover:text-blue-800 font-semibold"
-                    >
-                      Read More →
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
+          <div className="text-center text-gray-600">
+            <p>Posts will appear here once you create them in the admin panel.</p>
+            <Link
+              href="/admin"
+              className="inline-block mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Create Your First Post
+            </Link>
           </div>
         </div>
       </section>

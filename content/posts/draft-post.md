@@ -1,7 +1,7 @@
 ---
 title: "Draft Post - Pending Review"
 excerpt: "This is a draft post that needs to be reviewed before publishing."
-heroImage: "/uploads/draft-hero.jpg"
+heroImage: ""
 publishedAt: "2024-01-20T10:00:00.000Z"
 author: "Jane Smith"
 category: "Lifestyle"

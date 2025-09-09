@@ -4,23 +4,26 @@ import { TinaCMS } from 'tinacms'
 import { useEffect, useState } from 'react'
 
 export function TinaProvider({ children }: { children: React.ReactNode }) {
-  const [cms] = useState(() => new TinaCMS({
-    enabled: process.env.NODE_ENV !== 'production',
-    sidebar: true,
-    toolbar: true,
-  }))
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+    
+    // Initialize TinaCMS only on client side
     if (process.env.NODE_ENV !== 'production') {
-      import('tinacms').then(({ TinaCMS }) => {
-        // Initialize TinaCMS for development
+      const cms = new TinaCMS({
+        enabled: true,
+        sidebar: true,
+        toolbar: true,
       })
+      
+      // Store CMS instance globally for development
+      if (typeof window !== 'undefined') {
+        ;(window as any).tina = cms
+      }
     }
   }, [])
 
-  return (
-    <div>
-      {children}
-    </div>
-  )
+  // Always render children, but TinaCMS will only be active after mount
+  return <>{children}</>
 }

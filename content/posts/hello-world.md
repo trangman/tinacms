@@ -1,7 +1,7 @@
 ---
 title: "Hello World - Welcome to Our Blog"
 excerpt: "This is our first blog post using TinaCMS with Next.js. Learn about our new content management system and how it makes blogging easier."
-heroImage: "/uploads/hero-placeholder.jpg"
+heroImage: ""
 publishedAt: "2024-01-15T10:00:00.000Z"
 author: "John Doe"
 category: "Technology"
